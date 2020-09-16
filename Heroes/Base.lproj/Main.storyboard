@@ -23,6 +23,16 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="V3z-2d-YpY"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="roleCell" id="DWh-Ue-rvt">
+                                        <rect key="frame" x="0.0" y="28" width="200" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DWh-Ue-rvt" id="nBw-GC-AE1">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7jX-jW-HM9">
                                 <rect key="frame" x="244" y="0.0" width="608" height="393"/>
@@ -57,6 +67,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="7jX-jW-HM9" id="P1y-uU-Aad"/>
+                        <outlet property="tableView" destination="iGo-X3-lcm" id="emn-bE-XiT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

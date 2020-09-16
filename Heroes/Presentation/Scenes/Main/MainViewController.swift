@@ -14,19 +14,20 @@ class MainViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     private var viewModel: MainViewModel!
-    private var role = [String]()
+    private var roles = [String]()
     private var heroes = [Hero]()
-    private var heroesIdByrole = [String:[Int]]()
+    private var heroesByrole = [String:[Hero]]()
     private let disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MainViewModel()
         
-        bindViewModel()
         setupTableView()
+        bindViewModel()
     }
     
     func setupTableView() {
@@ -39,6 +40,7 @@ class MainViewController: UIViewController, Storyboarded {
         
         outputs.heroes.subscribe(onNext: {[weak self] heroes in
             self?.populateHeroes(heroes)
+            self?.tableView.reloadData()
             }).disposed(by: disposeBag)
     }
     
@@ -48,33 +50,37 @@ class MainViewController: UIViewController, Storyboarded {
             if let roles = hero.roles {
                 for role in roles {
                     
-                    if heroesIdByrole[role]?.count ?? 0 > 0 {
-                        heroesIdByrole[role]?.append(hero.id ?? 0)
+                    if heroesByrole[role]?.count ?? 0 > 0 {
+                        heroesByrole[role]?.append(hero)
                     } else {
-                        heroesIdByrole[role] = [hero.id ?? 0]
+                        heroesByrole[role] = [hero]
                     }
                     
-                    if !self.role.contains(role) {
-                        self.role.append(role)
+                    if !self.roles.contains(role) {
+                        self.roles.append(role)
                     }
                 }
             }
         }
         
-        role = role.sorted(by: { $0 < $1 })
-        print(role)
-        print(heroesIdByrole)
+        roles = role.sorted(by: { $0 < $1 })
+//        print(role)
+//        print(heroesByrole)
     }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return roles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell") else { return UITableViewCell() }
+        cell.textLabel?.text = roles[indexPath.row]
+        
+        return cell
     }    
 
 }
