@@ -27,6 +27,7 @@ class MainViewController: UIViewController, Storyboarded {
         viewModel = MainViewModel()
         
         setupTableView()
+        setupCollectionView()
         bindViewModel()
     }
     
@@ -35,12 +36,21 @@ class MainViewController: UIViewController, Storyboarded {
         tableView?.dataSource = self
     }
     
+    func setupCollectionView() {
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        
+        let nib = UINib(nibName: "HeroCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "heroCell")
+    }
+    
     private func bindViewModel() {
         let outputs = viewModel.output
         
         outputs.heroes.subscribe(onNext: {[weak self] heroes in
             self?.populateHeroes(heroes)
             self?.tableView.reloadData()
+            self?.collectionView.reloadData()
             }).disposed(by: disposeBag)
     }
     
@@ -63,9 +73,10 @@ class MainViewController: UIViewController, Storyboarded {
             }
         }
         
-        roles = role.sorted(by: { $0 < $1 })
-//        print(role)
-//        print(heroesByrole)
+        heroesByrole["All"] = heroes
+        roles = roles.sorted(by: { $0 < $1 })
+        self.roles.append("All")
+        self.heroes = heroes
     }
 }
 
@@ -78,9 +89,38 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell") else { return UITableViewCell() }
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 3
+        cell.layer.cornerRadius = 16
+        cell.backgroundColor = .black
+        cell.textLabel?.textColor = .white
         cell.textLabel?.text = roles[indexPath.row]
         
         return cell
-    }    
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        print(roles[indexPath.row])
+    }
 
+}
+
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return heroes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "heroCell", for: indexPath) as? HeroCell else { return UICollectionViewCell() }
+        cell.updateView(heroes[indexPath.row])
+        
+        return cell
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 180, height: 100)
+//    }
+    
 }
