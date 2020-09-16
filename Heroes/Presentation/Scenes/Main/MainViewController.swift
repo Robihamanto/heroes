@@ -100,8 +100,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        print(roles[indexPath.row])
+        let role = roles[indexPath.row]
+        heroes = heroesByrole[role] ?? []
+        collectionView.reloadData()
     }
 
 }
@@ -118,9 +119,5 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 180, height: 100)
-//    }
     
 }
