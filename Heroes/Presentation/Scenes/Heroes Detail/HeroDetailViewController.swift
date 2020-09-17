@@ -11,7 +11,8 @@ import UIKit
 class HeroDetailViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
-    private var hero: Hero?
+    var hero: Hero?
+    var heroes: [Hero]?
     
     override func viewDidLoad() {
         super.viewDidLoad()

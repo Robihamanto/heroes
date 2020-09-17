@@ -19,7 +19,9 @@ struct Hero: Codable {
     var icon: String?
     var baseHealth: Int?
     var baseMana: Int?
+    var baseArmor: Int?
     var baseAttackMax: Int?
+    var baseAttackMin: Int?
     var moveSpeed: Int?
     
     public enum CodingKeys: String, CodingKey {
@@ -32,7 +34,9 @@ struct Hero: Codable {
         case icon             = "icon"
         case baseHealth       = "base_health"
         case baseMana         = "base_mana"
+        case baseArmor        = "base_armor"
         case baseAttackMax    = "base_attack_max"
+        case baseAttackMin    = "base_attack_min"
         case moveSpeed        = "move_speed"
     }
 }
