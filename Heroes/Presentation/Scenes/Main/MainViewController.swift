@@ -48,36 +48,21 @@ class MainViewController: UIViewController, Storyboarded {
         let outputs = viewModel.output
         
         outputs.heroes.subscribe(onNext: {[weak self] heroes in
-            self?.populateHeroes(heroes)
+            self?.heroes = heroes
             self?.tableView.reloadData()
             self?.collectionView.reloadData()
             }).disposed(by: disposeBag)
+        
+        outputs.heroesByRole.subscribe(onNext: { [weak self] heroesByRole in
+            self?.heroesByrole = heroesByRole
+            }).disposed(by: disposeBag)
+        
+        outputs.roles.subscribe(onNext: { [weak self] roles in
+            self?.roles = roles
+            self?.tableView.reloadData()
+            }).disposed(by: disposeBag)
     }
     
-    func populateHeroes(_ heroes: [Hero]) {
-        
-        for hero in heroes {
-            if let roles = hero.roles {
-                for role in roles {
-                    
-                    if heroesByrole[role]?.count ?? 0 > 0 {
-                        heroesByrole[role]?.append(hero)
-                    } else {
-                        heroesByrole[role] = [hero]
-                    }
-                    
-                    if !self.roles.contains(role) {
-                        self.roles.append(role)
-                    }
-                }
-            }
-        }
-        
-        heroesByrole["All"] = heroes
-        roles = roles.sorted(by: { $0 < $1 })
-        self.roles.append("All")
-        self.heroes = heroes
-    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
