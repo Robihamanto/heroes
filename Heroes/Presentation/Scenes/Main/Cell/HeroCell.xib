@@ -20,39 +20,36 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gh-CC-sGS">
                         <rect key="frame" x="0.0" y="0.0" width="166" height="151"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-ze-6mG">
-                                <rect key="frame" x="8" y="8" width="150" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="BQJ-df-cKG"/>
-                                    <constraint firstAttribute="height" constant="100" id="In5-yd-gWn"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JL1-em-mWG">
-                                <rect key="frame" x="8" y="116" width="150" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VIR-IC-nd4">
+                                <rect key="frame" x="8" y="8" width="150" height="135"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-ze-6mG">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JL1-em-mWG">
+                                        <rect key="frame" x="0.0" y="108" width="150" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cCS-ze-6mG" firstAttribute="top" secondItem="2Gh-CC-sGS" secondAttribute="top" constant="8" id="0gJ-ov-zeY"/>
-                            <constraint firstAttribute="trailing" secondItem="cCS-ze-6mG" secondAttribute="trailing" constant="8" id="5ac-M5-D2o"/>
-                            <constraint firstItem="JL1-em-mWG" firstAttribute="top" secondItem="cCS-ze-6mG" secondAttribute="bottom" constant="8" id="5cL-Iz-AhG"/>
-                            <constraint firstItem="JL1-em-mWG" firstAttribute="leading" secondItem="2Gh-CC-sGS" secondAttribute="leading" constant="8" id="7HI-6R-fCx"/>
-                            <constraint firstItem="JL1-em-mWG" firstAttribute="centerX" secondItem="2Gh-CC-sGS" secondAttribute="centerX" id="NN4-Li-RYh"/>
-                            <constraint firstAttribute="trailing" secondItem="JL1-em-mWG" secondAttribute="trailing" constant="8" id="VB4-hp-VrY"/>
-                            <constraint firstItem="cCS-ze-6mG" firstAttribute="leading" secondItem="2Gh-CC-sGS" secondAttribute="leading" constant="8" id="bCt-4j-ZDm"/>
-                            <constraint firstAttribute="bottom" secondItem="JL1-em-mWG" secondAttribute="bottom" constant="8" id="rq8-bj-qbv"/>
+                            <constraint firstItem="VIR-IC-nd4" firstAttribute="leading" secondItem="2Gh-CC-sGS" secondAttribute="leading" constant="8" id="O2h-Yf-yrG"/>
+                            <constraint firstAttribute="bottom" secondItem="VIR-IC-nd4" secondAttribute="bottom" constant="8" id="e0B-aq-Yfu"/>
+                            <constraint firstAttribute="trailing" secondItem="VIR-IC-nd4" secondAttribute="trailing" constant="8" id="pKB-Na-fJ9"/>
+                            <constraint firstItem="VIR-IC-nd4" firstAttribute="top" secondItem="2Gh-CC-sGS" secondAttribute="top" constant="8" id="upi-mY-jsb"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="2Gh-CC-sGS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DwV-nJ-RMs"/>
-                <constraint firstAttribute="trailing" secondItem="2Gh-CC-sGS" secondAttribute="trailing" id="UkD-hr-pEE"/>
-                <constraint firstAttribute="bottom" secondItem="2Gh-CC-sGS" secondAttribute="bottom" id="V7p-GR-JuN"/>
-                <constraint firstItem="2Gh-CC-sGS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mpW-Fh-SaF"/>
+                <constraint firstAttribute="trailing" secondItem="2Gh-CC-sGS" secondAttribute="trailing" id="1Z4-q5-zVA"/>
+                <constraint firstItem="2Gh-CC-sGS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ARx-vh-BOc"/>
+                <constraint firstItem="2Gh-CC-sGS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FlO-eS-vHp"/>
+                <constraint firstAttribute="bottom" secondItem="2Gh-CC-sGS" secondAttribute="bottom" id="lvR-87-gAM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="166" height="151"/>

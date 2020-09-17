@@ -17,7 +17,7 @@ class HeroCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
     }
     
     func updateView(_ hero: Hero) {
