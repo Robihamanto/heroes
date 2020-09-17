@@ -88,6 +88,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let role = roles[indexPath.row]
         heroes = heroesByrole[role] ?? []
         collectionView.reloadData()
+        
+        title = role
     }
 
 }
@@ -103,6 +105,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.updateView(heroes[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let hero = heroes[indexPath.row]
+        let heroes = self.heroes
+        coordinator?.navigateToHeroDetail(withHero: hero, andHeroes: heroes)
     }
 
 }

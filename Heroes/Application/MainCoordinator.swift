@@ -24,9 +24,11 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func navigateToHeroDetail(to userID: Int) {
+    func navigateToHeroDetail(withHero hero: Hero, andHeroes heroes: [Hero]) {
         let vc = HeroDetailViewController.instantiate()
         vc.coordinator = self
+        vc.hero = hero
+        vc.heroes = heroes
         navigationController.pushViewController(vc, animated: true)
     }
 }
