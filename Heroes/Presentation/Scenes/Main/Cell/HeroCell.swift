@@ -24,7 +24,7 @@ class HeroCell: UICollectionViewCell {
         
         heroNameLabel.text = hero.localizedName ?? ""
         
-        let link = "https://api.opendota.com\(hero.image ?? "")"
+        let link = hero.link
         let url = URL(string: link)
         heroImageView.kf.setImage(with: url)
     }

@@ -96,13 +96,13 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-Sg-IFF">
                                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k4B-2W-qBg">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k4B-2W-qBg">
                                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="104"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="104" id="4pi-K6-j9a"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-f4-N8c">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_role" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-f4-N8c">
                                                                 <rect key="frame" x="8" y="112" width="45" height="45"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="45" id="MW5-yL-K8A"/>
@@ -162,7 +162,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7l5-bV-Te9">
                                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="83.5"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OW5-so-f9Z">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_attack" translatesAutoresizingMaskIntoConstraints="NO" id="OW5-so-f9Z">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="83.5"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fr-NJ-F6E">
@@ -176,7 +176,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X4p-lE-fuJ">
                                                                         <rect key="frame" x="150" y="0.0" width="150" height="83.5"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-u9-fjC">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_health" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-u9-fjC">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="83.5"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-tf-Prr">
@@ -195,7 +195,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2pX-rV-NJZ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="83"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgD-jq-Unb">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_armor" translatesAutoresizingMaskIntoConstraints="NO" id="WgD-jq-Unb">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="83"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VY9-Ds-3D6">
@@ -209,7 +209,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uKh-wR-zov">
                                                                         <rect key="frame" x="150" y="0.0" width="150" height="83"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RTe-jl-4TO">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mana" translatesAutoresizingMaskIntoConstraints="NO" id="RTe-jl-4TO">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="83"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai1-gl-a4O">
@@ -228,7 +228,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IyP-S8-vgu">
                                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="83.5"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NV9-4A-aUd">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_speed" translatesAutoresizingMaskIntoConstraints="NO" id="NV9-4A-aUd">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="83.5"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKn-Ac-e9c">
@@ -242,7 +242,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QbD-OT-5ri">
                                                                         <rect key="frame" x="150" y="0.0" width="150" height="83.5"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-Y6-saJ">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_primary_attribute" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-Y6-saJ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="83.5"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-wu-Kv1">
@@ -261,7 +261,7 @@
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="bbl-Sg-IFF" secondAttribute="bottom" id="9qK-D4-cdG"/>
                                                     <constraint firstAttribute="bottom" secondItem="uRp-EC-3eQ" secondAttribute="bottom" id="AIr-S4-nPb"/>
@@ -306,7 +306,7 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="QOP-Gl-vuN" secondAttribute="bottom" constant="18" id="2vj-ZG-2lU"/>
                                                     <constraint firstItem="GdQ-II-Ng5" firstAttribute="leading" secondItem="rrV-xu-N6O" secondAttribute="leading" constant="16" id="Bkg-Wg-w1g"/>
@@ -347,10 +347,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jhg-C9-Tvq"/>
                     </view>
+                    <connections>
+                        <outlet property="armorLabel" destination="VY9-Ds-3D6" id="oXa-QW-YyP"/>
+                        <outlet property="attackLabel" destination="6fr-NJ-F6E" id="L6d-Ms-J2Y"/>
+                        <outlet property="attributeLabel" destination="Lfd-wu-Kv1" id="ye3-KZ-y3u"/>
+                        <outlet property="healthLabel" destination="jVt-tf-Prr" id="5vj-zX-yYj"/>
+                        <outlet property="heroImageView" destination="k4B-2W-qBg" id="YWu-HM-INY"/>
+                        <outlet property="manaLabel" destination="ai1-gl-a4O" id="ubf-1y-glE"/>
+                        <outlet property="nameLabel" destination="9wL-yj-aS0" id="Ch2-KR-VXk"/>
+                        <outlet property="rolesLabel" destination="sMe-hf-wRK" id="MuL-RZ-YMp"/>
+                        <outlet property="similarHeroOneImageView" destination="wDV-Xy-3Gg" id="DzP-Hb-Me8"/>
+                        <outlet property="similarHeroThreeImageView" destination="Jea-kw-yxq" id="mw4-mG-eY6"/>
+                        <outlet property="similarHeroTwoImageView" destination="L2v-db-44b" id="7jN-g5-N0K"/>
+                        <outlet property="speedLabel" destination="GKn-Ac-e9c" id="iLg-RW-mbA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exu-IX-Hdj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.625" y="879.71014492753625"/>
+            <point key="canvasLocation" x="141" y="870"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_armor" width="72" height="68"/>
+        <image name="ic_attack" width="75" height="75"/>
+        <image name="ic_health" width="75" height="75"/>
+        <image name="ic_mana" width="80" height="77"/>
+        <image name="ic_primary_attribute" width="81" height="73"/>
+        <image name="ic_role" width="69" height="64"/>
+        <image name="ic_speed" width="75" height="82"/>
+    </resources>
 </document>

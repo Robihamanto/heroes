@@ -19,10 +19,14 @@ struct Hero: Codable {
     var icon: String?
     var baseHealth: Int?
     var baseMana: Int?
-    var baseArmor: Int?
+    var baseArmor: Float32?
     var baseAttackMax: Int?
     var baseAttackMin: Int?
     var moveSpeed: Int?
+    
+    var link: String {
+        return "https://api.opendota.com\(image ?? "")"
+    }
     
     public enum CodingKeys: String, CodingKey {
         case id               = "id"
