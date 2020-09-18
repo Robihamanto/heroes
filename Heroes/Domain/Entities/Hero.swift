@@ -28,7 +28,7 @@ struct Hero: Codable {
         return "https://api.opendota.com\(image ?? "")"
     }
     
-    public enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id               = "id"
         case localizedName    = "localized_name"
         case primaryAttribute = "primary_attr"
