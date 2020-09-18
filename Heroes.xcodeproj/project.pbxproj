@@ -20,6 +20,9 @@
 		F4205D6F251260CE00F82216 /* HeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4205D6D251260CE00F82216 /* HeroCell.xib */; };
 		F4205D71251337F600F82216 /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4205D70251337F600F82216 /* HeroDetailViewModel.swift */; };
 		F4205D7B251388F700F82216 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4205D78251388F700F82216 /* CoreDataStorage.xcdatamodeld */; };
+		F4205D7F2513933400F82216 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4205D7E2513933400F82216 /* CoreDataStorage.swift */; };
+		F4205D842514629B00F82216 /* HeroesResponseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4205D832514629B00F82216 /* HeroesResponseStorage.swift */; };
+		F4205D8725146C1700F82216 /* HeroEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4205D8625146C1700F82216 /* HeroEntity+Mapping.swift */; };
 		F4AB581125107921006FD69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB581025107921006FD69C /* AppDelegate.swift */; };
 		F4AB581825107921006FD69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AB581625107921006FD69C /* Main.storyboard */; };
 		F4AB581A25107926006FD69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AB581925107926006FD69C /* Assets.xcassets */; };
@@ -62,6 +65,9 @@
 		F4205D70251337F600F82216 /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
 		F4205D79251388F700F82216 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
 		F4205D7A251388F700F82216 /* ManagedHero.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ManagedHero.xcdatamodel; sourceTree = "<group>"; };
+		F4205D7E2513933400F82216 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		F4205D832514629B00F82216 /* HeroesResponseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesResponseStorage.swift; sourceTree = "<group>"; };
+		F4205D8625146C1700F82216 /* HeroEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+Mapping.swift"; sourceTree = "<group>"; };
 		F4AB580D25107921006FD69C /* Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AB581025107921006FD69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4AB581725107921006FD69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +179,41 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		F4205D7C2513930600F82216 /* Persistent Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F4205D802513940A00F82216 /* HeroesResponseStorage */,
+				F4205D7D2513932000F82216 /* CoreDataStorage */,
+			);
+			path = "Persistent Storage";
+			sourceTree = "<group>";
+		};
+		F4205D7D2513932000F82216 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				F4205D7E2513933400F82216 /* CoreDataStorage.swift */,
+				F4205D78251388F700F82216 /* CoreDataStorage.xcdatamodeld */,
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		F4205D802513940A00F82216 /* HeroesResponseStorage */ = {
+			isa = PBXGroup;
+			children = (
+				F4205D8525146BEC00F82216 /* EntityMapping */,
+				F4205D832514629B00F82216 /* HeroesResponseStorage.swift */,
+			);
+			path = HeroesResponseStorage;
+			sourceTree = "<group>";
+		};
+		F4205D8525146BEC00F82216 /* EntityMapping */ = {
+			isa = PBXGroup;
+			children = (
+				F4205D8625146C1700F82216 /* HeroEntity+Mapping.swift */,
+			);
+			path = EntityMapping;
+			sourceTree = "<group>";
+		};
 		F4AB580425107921006FD69C = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +247,6 @@
 				F4AB581925107926006FD69C /* Assets.xcassets */,
 				F4AB581B25107926006FD69C /* LaunchScreen.storyboard */,
 				F4AB581E25107926006FD69C /* Info.plist */,
-				F4205D78251388F700F82216 /* CoreDataStorage.xcdatamodeld */,
 			);
 			path = Heroes;
 			sourceTree = "<group>";
@@ -267,6 +307,7 @@
 		F4AB58372511B531006FD69C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F4205D7C2513930600F82216 /* Persistent Storage */,
 				F4205D5C2511D97C00F82216 /* Repositories */,
 			);
 			path = Data;
@@ -488,8 +529,11 @@
 				F4205D592511D20600F82216 /* DotaService.swift in Sources */,
 				F4205D622511DBC800F82216 /* HeroRepositoryType.swift in Sources */,
 				F4AB581125107921006FD69C /* AppDelegate.swift in Sources */,
+				F4205D842514629B00F82216 /* HeroesResponseStorage.swift in Sources */,
 				F4AB583B2511B632006FD69C /* Storyboarded.swift in Sources */,
 				F4205D7B251388F700F82216 /* CoreDataStorage.xcdatamodeld in Sources */,
+				F4205D8725146C1700F82216 /* HeroEntity+Mapping.swift in Sources */,
+				F4205D7F2513933400F82216 /* CoreDataStorage.swift in Sources */,
 				F4205D6A2512597E00F82216 /* RoleCell.swift in Sources */,
 				F4AB58422511B737006FD69C /* MainViewController.swift in Sources */,
 				F4205D5B2511D21200F82216 /* Dota.swift in Sources */,

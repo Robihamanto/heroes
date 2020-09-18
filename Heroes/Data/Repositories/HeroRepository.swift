@@ -8,10 +8,15 @@
 
 import Foundation
 
-class HeroRepository: HeroRepositoryType {
+class HeroRepository {
+    
+    private let service = DotaService()
+    
+}
+
+extension HeroRepository: HeroRepositoryType {
     
     func fetchHeroes(completion: @escaping (Result<[Hero], Error>) -> Void) {
-        let service = DotaService()
         service.fetchHeroes { result in
             switch result {
             case .success(let heroes):
