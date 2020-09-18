@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 protocol HeroesResponseStorage {
-    func getResponse(hero: Hero, completion: @escaping (Result<Hero?, CoreDataStorageError>) -> Void)
+    func getResponse(completion: @escaping (Result<[Hero], CoreDataStorageError>) -> Void)
     func save(hero: Hero)
     func save(heros: [Hero])
 }
@@ -28,7 +28,7 @@ final class CoreDataHeroesResponseStorage {
 
     private func fetchRequest(hero: Hero) -> NSFetchRequest<HeroEntity> {
         let request: NSFetchRequest = HeroEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "id == %@", hero.id ?? 0)
+        request.predicate = NSPredicate(format: "id = %d", hero.id ?? 0)
         return request
     }
     
@@ -53,13 +53,15 @@ final class CoreDataHeroesResponseStorage {
 
 extension CoreDataHeroesResponseStorage: HeroesResponseStorage {
     
-    func getResponse(hero: Hero, completion: @escaping (Result<Hero?, CoreDataStorageError>) -> Void) {
+    func getResponse(completion: @escaping (Result<[Hero], CoreDataStorageError>) -> Void) {
         coreDataStorage.performBackgroundTask {context in
             do {
-                let fetchRequest = self.fetchRequest(hero: hero)
-                let requestEntity = try context.fetch(fetchRequest).first
+                let fetchRequest = self.fetchRequest()
+                let requestEntity = try context.fetch(fetchRequest)
                 
-                completion(.success(requestEntity?.toObject()))
+                let heroes = requestEntity.map{ $0.toObject() }
+                
+                completion(.success(heroes))
             } catch {
                 completion(.failure(CoreDataStorageError.readError(error)))
             }

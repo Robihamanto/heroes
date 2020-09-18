@@ -10,6 +10,6 @@ import Foundation
 
 protocol HeroRepositoryType {
     
-    func fetchHeroes(completion: @escaping (Result<[Hero], Error>) -> Void)
+    func fetchHeroes(cached: @escaping ([Hero]) -> Void, completion: @escaping (Result<[Hero], Error>) -> Void)
     
 }

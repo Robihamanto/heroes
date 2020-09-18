@@ -51,7 +51,7 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
         isLoading = isLoadingProperty
         
         isLoadingProperty.accept(true)
-        fetchHeroesUseCase.execute { [weak self] result in
+        fetchHeroesUseCase.execute(cached: populateHeroes) { [weak self] result in
             switch result {
             case .success(let heroes):
                 self?.isLoadingProperty.accept(false)
@@ -95,8 +95,10 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
         heroRoles = heroRoles.sorted(by: { $0 < $1 })
         heroRoles.append("All")
         
-        heroesProperty.onNext(heroes)
-        heroesByRoleProperty.onNext(heroesByrole)
-        rolesProperty.onNext(heroRoles)
+        DispatchQueue.main.async {
+            self.heroesProperty.onNext(heroes)
+            self.heroesByRoleProperty.onNext(heroesByrole)
+            self.rolesProperty.onNext(heroRoles)
+        }
     }
 }
