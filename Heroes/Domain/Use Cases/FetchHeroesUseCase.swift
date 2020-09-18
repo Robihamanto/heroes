@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FetchHeroesUseCaseType {
-    func execute(completion : @escaping((Result<[Hero], Error>) -> Void))
+    func execute(cached: @escaping ([Hero]) -> Void, completion : @escaping((Result<[Hero], Error>) -> Void))
 }
 
 final class FetchHeroesUseCase: FetchHeroesUseCaseType {
@@ -20,8 +20,9 @@ final class FetchHeroesUseCase: FetchHeroesUseCaseType {
         self.heroRepository = heroRepository
     }
     
-    func execute(completion: @escaping ((Result<[Hero], Error>) -> Void)) {
-        heroRepository.fetchHeroes { result in
+    func execute(cached: @escaping ([Hero]) -> Void, completion: @escaping ((Result<[Hero], Error>) -> Void)) {
+        
+        heroRepository.fetchHeroes(cached: cached) { result in
             switch result {
             case .success(let users):
                 completion(.success(users))
