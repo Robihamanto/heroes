@@ -23,6 +23,7 @@
 		F4205D7F2513933400F82216 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4205D7E2513933400F82216 /* CoreDataStorage.swift */; };
 		F4205D842514629B00F82216 /* HeroesResponseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4205D832514629B00F82216 /* HeroesResponseStorage.swift */; };
 		F4205D8725146C1700F82216 /* HeroEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4205D8625146C1700F82216 /* HeroEntity+Mapping.swift */; };
+		F4205D8B251508CA00F82216 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4205D8A251508CA00F82216 /* Alertable.swift */; };
 		F4AB581125107921006FD69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB581025107921006FD69C /* AppDelegate.swift */; };
 		F4AB581825107921006FD69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AB581625107921006FD69C /* Main.storyboard */; };
 		F4AB581A25107926006FD69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AB581925107926006FD69C /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		F4205D7E2513933400F82216 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		F4205D832514629B00F82216 /* HeroesResponseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesResponseStorage.swift; sourceTree = "<group>"; };
 		F4205D8625146C1700F82216 /* HeroEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+Mapping.swift"; sourceTree = "<group>"; };
+		F4205D8A251508CA00F82216 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		F4AB580D25107921006FD69C /* Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AB581025107921006FD69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4AB581725107921006FD69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +216,23 @@
 			path = EntityMapping;
 			sourceTree = "<group>";
 		};
+		F4205D882515086800F82216 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F4205D892515088900F82216 /* Protocols */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F4205D892515088900F82216 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F4AB583A2511B632006FD69C /* Storyboarded.swift */,
+				F4205D8A251508CA00F82216 /* Alertable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F4AB580425107921006FD69C = {
 			isa = PBXGroup;
 			children = (
@@ -265,7 +284,6 @@
 			children = (
 				F4AB581025107921006FD69C /* AppDelegate.swift */,
 				F4AB58382511B625006FD69C /* Coordinator.swift */,
-				F4AB583A2511B632006FD69C /* Storyboarded.swift */,
 				F4AB583C2511B684006FD69C /* MainCoordinator.swift */,
 			);
 			path = Application;
@@ -281,6 +299,7 @@
 		F4AB58342511B518006FD69C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F4205D882515086800F82216 /* Utils */,
 				F4AB583E2511B6E4006FD69C /* Scenes */,
 			);
 			path = Presentation;
@@ -534,6 +553,7 @@
 				F4205D7B251388F700F82216 /* CoreDataStorage.xcdatamodeld in Sources */,
 				F4205D8725146C1700F82216 /* HeroEntity+Mapping.swift in Sources */,
 				F4205D7F2513933400F82216 /* CoreDataStorage.swift in Sources */,
+				F4205D8B251508CA00F82216 /* Alertable.swift in Sources */,
 				F4205D6A2512597E00F82216 /* RoleCell.swift in Sources */,
 				F4AB58422511B737006FD69C /* MainViewController.swift in Sources */,
 				F4205D5B2511D21200F82216 /* Dota.swift in Sources */,

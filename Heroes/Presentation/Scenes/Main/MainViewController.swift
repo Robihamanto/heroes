@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MainViewController: UIViewController, Storyboarded {
+class MainViewController: UIViewController, Storyboarded, Alertable {
     
     weak var coordinator: MainCoordinator?
     private var viewModel: MainViewModel!
@@ -60,6 +60,10 @@ class MainViewController: UIViewController, Storyboarded {
         outputs.roles.subscribe(onNext: { [weak self] roles in
             self?.roles = roles
             self?.tableView.reloadData()
+            }).disposed(by: disposeBag)
+        
+        outputs.error.subscribe(onNext: { [weak self] errorMessage in
+            self?.showAlert(message: errorMessage)
             }).disposed(by: disposeBag)
     }
     
