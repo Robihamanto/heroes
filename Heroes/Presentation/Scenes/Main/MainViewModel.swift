@@ -40,9 +40,9 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
     
     var fetchHeroesUseCase: FetchHeroesUseCase
     
-    init() {
+    init(fetchHeroesUseCase: FetchHeroesUseCase /*  = FetchHeroesUseCase(heroRepository: HeroRepository()) */) {
         
-        fetchHeroesUseCase = FetchHeroesUseCase(heroRepository: HeroRepository())
+        self.fetchHeroesUseCase = fetchHeroesUseCase
         
         heroesByRole = heroesByRoleProperty
         heroes = heroesProperty
