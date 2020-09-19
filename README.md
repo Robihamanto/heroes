@@ -36,4 +36,4 @@ Feature:
 1. Using [`RxSwift`](https://github.com/ReactiveX/RxSwift) 🔥
 2. `MVVM` + `Coordinator` + Dependency Injection
 3. Using `Codable`, [`Moya`](https://github.com/Moya/Moya), [`Kingfisher`](https://github.com/onevcat/Kingfisher).
-4. Fun thing!s
+4. Fun things!
