@@ -22,10 +22,12 @@ class MainViewController: UIViewController, Storyboarded, Alertable {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    func create(viewModel: MainViewModel) {
+        self.viewModel = viewModel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = MainViewModel()
-        
         setupTableView()
         setupCollectionView()
         bindViewModel()

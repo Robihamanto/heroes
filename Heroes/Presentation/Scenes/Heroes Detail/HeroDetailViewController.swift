@@ -35,9 +35,12 @@ class HeroDetailViewController: UIViewController, Storyboarded {
     private var viewModel: HeroDetailViewModel!
     private let disposeBag = DisposeBag()
     
+    func create(viewModel: HeroDetailViewModel) {
+        self.viewModel = viewModel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = HeroDetailViewModel(hero: hero!, heroes: heroes!)
         bindViewModel()
     }
     
