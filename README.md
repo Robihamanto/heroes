@@ -23,8 +23,8 @@ open Heroes.workspace # or xed .
 
 ## 👨🏻‍💻 Heroes Design
   <p float="left">
-    <img src="./Preview/main-scene-all.png" width="18%"/> 
-    <img src="./Preview/hero-detail-scene.png" width="18%"/> 
+    <img src="./Preview/main-scene-all.png"/> 
+    <img src="./Preview/hero-detail-scene.png"/> 
   </p>
 
 Feature: 
