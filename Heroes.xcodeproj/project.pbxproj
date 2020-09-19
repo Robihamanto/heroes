@@ -37,6 +37,8 @@
 		F4AB584B2511BDF9006FD69C /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB584A2511BDF9006FD69C /* HeroDetailViewController.swift */; };
 		F4C6F10A25158EA70076C1F6 /* FetchHeroesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6F10925158EA70076C1F6 /* FetchHeroesUseCaseTests.swift */; };
 		F4C6F10D25159D5E0076C1F6 /* MainSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6F10C25159D5E0076C1F6 /* MainSceneDIContainer.swift */; };
+		F4C6F1122515A3DA0076C1F6 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6F1112515A3DA0076C1F6 /* MainViewModelTests.swift */; };
+		F4C6F1142515ADF50076C1F6 /* HeroDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6F1132515ADF50076C1F6 /* HeroDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		F4AB584A2511BDF9006FD69C /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		F4C6F10925158EA70076C1F6 /* FetchHeroesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHeroesUseCaseTests.swift; sourceTree = "<group>"; };
 		F4C6F10C25159D5E0076C1F6 /* MainSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneDIContainer.swift; sourceTree = "<group>"; };
+		F4C6F1112515A3DA0076C1F6 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		F4C6F1132515ADF50076C1F6 /* HeroDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModelTests.swift; sourceTree = "<group>"; };
 		F87AC9D9A7784BD57017E73A /* Pods-Heroes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heroes.release.xcconfig"; path = "Target Support Files/Pods-Heroes/Pods-Heroes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C6F10525158E230076C1F6 /* Domain */,
+				F4C6F10E2515A3890076C1F6 /* Presentation */,
 				F4AB582925107927006FD69C /* Info.plist */,
 			);
 			path = HeroesTests;
@@ -393,6 +398,31 @@
 				F4C6F10C25159D5E0076C1F6 /* MainSceneDIContainer.swift */,
 			);
 			path = DIContainers;
+			sourceTree = "<group>";
+		};
+		F4C6F10E2515A3890076C1F6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F4C6F10F2515A3920076C1F6 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F4C6F10F2515A3920076C1F6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F4C6F1102515A39D0076C1F6 /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F4C6F1102515A39D0076C1F6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F4C6F1112515A3DA0076C1F6 /* MainViewModelTests.swift */,
+				F4C6F1132515ADF50076C1F6 /* HeroDetailViewModelTests.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +625,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C6F10A25158EA70076C1F6 /* FetchHeroesUseCaseTests.swift in Sources */,
+				F4C6F1142515ADF50076C1F6 /* HeroDetailViewModelTests.swift in Sources */,
+				F4C6F1122515A3DA0076C1F6 /* MainViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

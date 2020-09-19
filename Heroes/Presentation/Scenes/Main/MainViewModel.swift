@@ -38,9 +38,9 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
     var input : MainViewModelInput { return self }
     var output: MainViewModelOutput { return self }
     
-    var fetchHeroesUseCase: FetchHeroesUseCase
+    var fetchHeroesUseCase: FetchHeroesUseCaseType
     
-    init(fetchHeroesUseCase: FetchHeroesUseCase /*  = FetchHeroesUseCase(heroRepository: HeroRepository()) */) {
+    init(fetchHeroesUseCase: FetchHeroesUseCaseType) {
         
         self.fetchHeroesUseCase = fetchHeroesUseCase
         
@@ -64,11 +64,11 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
         
     }
     
-    var heroesByRoleProperty: PublishSubject<[String:[Hero]]> = PublishSubject()
-    var heroesProperty: PublishSubject<[Hero]> = PublishSubject()
-    var rolesProperty: PublishSubject<[String]> = PublishSubject()
-    var errorProperty: PublishSubject<String> = PublishSubject()
-    var isLoadingProperty: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    private var heroesByRoleProperty: PublishSubject<[String:[Hero]]> = PublishSubject()
+    private var heroesProperty: PublishSubject<[Hero]> = PublishSubject()
+    private var rolesProperty: PublishSubject<[String]> = PublishSubject()
+    private var errorProperty: PublishSubject<String> = PublishSubject()
+    private var isLoadingProperty: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
     func populateHeroes(_ heroes: [Hero]) {
         var heroesByrole = [String:[Hero]]()
