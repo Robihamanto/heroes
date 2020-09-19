@@ -11,7 +11,7 @@ import UIKit
 
 protocol MainCoordinatorDependencies  {
     func makeMainViewController() -> MainViewController
-    func makeHeroDetailViewController() -> HeroDetailViewController
+    func makeHeroDetailViewController(hero: Hero, heroes: [Hero]) -> HeroDetailViewController
 }
 
 class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
@@ -34,10 +34,8 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
     
     func navigateToHeroDetail(withHero hero: Hero, andHeroes heroes: [Hero]) {
-        let vc = HeroDetailViewController.instantiate()
+        let vc = dependencies.makeHeroDetailViewController(hero: hero, heroes: heroes)
         vc.coordinator = self
-        vc.hero = hero
-        vc.heroes = heroes
         navigationController.pushViewController(vc, animated: true)
     }
 }

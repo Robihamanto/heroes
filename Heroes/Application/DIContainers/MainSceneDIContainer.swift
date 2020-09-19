@@ -32,8 +32,14 @@ final class MainSceneDIContainer: MainCoordinatorDependencies {
     
     //MARK: - Hero Detail
     
-    func makeHeroDetailViewController() -> HeroDetailViewController {
-        return HeroDetailViewController()
+    func makeHeroDetailViewController(hero: Hero, heroes: [Hero]) -> HeroDetailViewController {
+        let vc = HeroDetailViewController.instantiate()
+        vc.create(viewModel: makeHeroDetailViewModel(hero: hero, heroes: heroes))
+        return vc
+    }
+    
+    func makeHeroDetailViewModel(hero: Hero, heroes: [Hero]) -> HeroDetailViewModel {
+        return HeroDetailViewModel(hero: hero, heroes: heroes)
     }
     
     
