@@ -28,7 +28,6 @@
 		F4AB581825107921006FD69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AB581625107921006FD69C /* Main.storyboard */; };
 		F4AB581A25107926006FD69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AB581925107926006FD69C /* Assets.xcassets */; };
 		F4AB581D25107926006FD69C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AB581B25107926006FD69C /* LaunchScreen.storyboard */; };
-		F4AB582825107927006FD69C /* HeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB582725107927006FD69C /* HeroesTests.swift */; };
 		F4AB58392511B625006FD69C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB58382511B625006FD69C /* Coordinator.swift */; };
 		F4AB583B2511B632006FD69C /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB583A2511B632006FD69C /* Storyboarded.swift */; };
 		F4AB583D2511B684006FD69C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB583C2511B684006FD69C /* MainCoordinator.swift */; };
@@ -36,6 +35,7 @@
 		F4AB58452511B7B3006FD69C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB58442511B7B3006FD69C /* Hero.swift */; };
 		F4AB58492511BD41006FD69C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB58482511BD41006FD69C /* MainViewModel.swift */; };
 		F4AB584B2511BDF9006FD69C /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB584A2511BDF9006FD69C /* HeroDetailViewController.swift */; };
+		F4C6F10A25158EA70076C1F6 /* FetchHeroesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6F10925158EA70076C1F6 /* FetchHeroesUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,6 @@
 		F4AB581C25107926006FD69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4AB581E25107926006FD69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4AB582325107927006FD69C /* HeroesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeroesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4AB582725107927006FD69C /* HeroesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTests.swift; sourceTree = "<group>"; };
 		F4AB582925107927006FD69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4AB58382511B625006FD69C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F4AB583A2511B632006FD69C /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		F4AB58442511B7B3006FD69C /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		F4AB58482511BD41006FD69C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F4AB584A2511BDF9006FD69C /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		F4C6F10925158EA70076C1F6 /* FetchHeroesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHeroesUseCaseTests.swift; sourceTree = "<group>"; };
 		F87AC9D9A7784BD57017E73A /* Pods-Heroes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heroes.release.xcconfig"; path = "Target Support Files/Pods-Heroes/Pods-Heroes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,7 +273,7 @@
 		F4AB582625107927006FD69C /* HeroesTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4AB582725107927006FD69C /* HeroesTests.swift */,
+				F4C6F10525158E230076C1F6 /* Domain */,
 				F4AB582925107927006FD69C /* Info.plist */,
 			);
 			path = HeroesTests;
@@ -366,6 +366,22 @@
 				F4AB58442511B7B3006FD69C /* Hero.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		F4C6F10525158E230076C1F6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F4C6F10625158E2B0076C1F6 /* Use Cases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F4C6F10625158E2B0076C1F6 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				F4C6F10925158EA70076C1F6 /* FetchHeroesUseCaseTests.swift */,
+			);
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,7 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4AB582825107927006FD69C /* HeroesTests.swift in Sources */,
+				F4C6F10A25158EA70076C1F6 /* FetchHeroesUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
