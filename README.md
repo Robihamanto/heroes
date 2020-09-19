@@ -15,7 +15,7 @@ An app to know the information of heroes status
 ``` bash
 git clone https://github.com/robihamanto/heroes.git
 cd Heroes
-open Talents.workspace # or xed .
+open Heroes.workspace # or xed .
 
 - Run (⌘ + R) or
 - Test (⌘ + U)
